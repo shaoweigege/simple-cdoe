@@ -54,6 +54,11 @@ let a = false
 let a=false
 ```
 
+## 避免使用双引号
+
+双引号大多数语言上和单引号是一致的，因此请尽量使用单引号代替双引号
+
+
 ## 省略语法和符号
 
 不报错的情况下可省略一些语法，如分号。
@@ -96,5 +101,43 @@ import a from 'xxx'
 let at='addItem'
 a[at]('1'),a[at]('1')
 ```
+
+## 无用变量使用_命名
+
+一些方法回调里通常会带一些我们不需要的参数，但又必须使用后面的参数，这些参数请使用_命名
+
+`错误例子`：
+```javascript
+function get(code,state,info,std){
+  return std
+}
+```
+
+`正确例子`：
+```javascript
+let get=(_,_1,_2,s)=>s
+```
+
+## 使用ES => 语法替代function
+
+`ES` `=>` 语法和`function`的区别只是内部`this`指向不同，但却缩短了函数的定义，如果真有需要内部`this`的需求，请使用对象属性的定义方式
+
+`错误例子`：
+```javascript
+function get(){
+
+}
+```
+
+`正确例子`：
+```javascript
+let get={
+  name(){
+
+  }
+}
+```
+
+
 
 ## 未完待续...
