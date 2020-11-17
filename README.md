@@ -37,7 +37,7 @@ if(c){
 `正确例子`：
 ```javascript
 let a=system.getApp(),gn=system.getName()
-c?(a.use()&&gn()):console.log(false)
+c?(a.use(),gn()):console.log(false)
 ```
 
 ## 删除空格
